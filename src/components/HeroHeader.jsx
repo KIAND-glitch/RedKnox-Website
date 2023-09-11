@@ -1,4 +1,5 @@
-import { createStyles, Container, Title, Text, Button, rem } from '@mantine/core';
+import { createStyles, Container, Title, Text, Button, rem, Image } from '@mantine/core';
+
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -30,9 +31,11 @@ const useStyles = createStyles((theme) => ({
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
     paddingBottom: `calc(${theme.spacing.xl} * 2)`,
     marginRight: `calc(${theme.spacing.xl} * 3)`,
+    marginLeft: `calc(${theme.spacing.xl} * 3)`,
 
     [theme.fn.smallerThan('md')]: {
       marginRight: 0,
+      marginLeft: 0,
     },
   },
 
@@ -85,10 +88,11 @@ const HeroImageRight = () =>  {
                 component="span"
                 inherit
                 variant="gradient"
-                gradient={{ from: 'pink', to: 'yellow' }}
+                gradient={{ from: '#f6a951', to: '#8c4a22' }}
               >
                 RedKnox
               </Text>
+              
                
             </Title>
 
@@ -98,7 +102,7 @@ const HeroImageRight = () =>  {
 
             <Button
               variant="gradient"
-              gradient={{ from: 'pink', to: 'yellow' }}
+              gradient={{ from: '#f6a951', to: '#8c4a22' }}
               size="md"
               className={classes.control}
               mt={40}

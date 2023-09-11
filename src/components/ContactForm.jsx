@@ -10,33 +10,34 @@ import {
     ActionIcon,
     rem,
   } from '@mantine/core';
-  import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
-//   import { ContactIconsList } from '../ContactIcons/ContactIcons';
+  import { IconPhone, IconMailFilled } from '@tabler/icons-react';
   
   const useStyles = createStyles((theme) => ({
     wrapper: {
       minHeight: 400,
       boxSizing: 'border-box',
-      backgroundImage: `linear-gradient(-60deg, ${theme.colors[theme.primaryColor][4]} 0%, ${
-        theme.colors[theme.primaryColor][7]
-      } 100%)`,
+      backgroundColor: '#c6d6e2',
       borderRadius: theme.radius.md,
-      padding: `calc(${theme.spacing.xl} * 2.5)`,
+      padding: `calc(${theme.spacing.xl} * 4.5)`,
+      paddingLeft: `calc(${theme.spacing.xl} * 10)`,
+      paddingRight: `calc(${theme.spacing.xl} * 10)`,
   
       [theme.fn.smallerThan('sm')]: {
         padding: `calc(${theme.spacing.xl} * 1.5)`,
+        marginLeft: `0`,
+        marginRight: `0`,
       },
       mx: theme.spacing.xl,
     },
   
     title: {
       fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-      color: theme.white,
+      color: '#284258',
       lineHeight: 1,
     },
   
     description: {
-      color: theme.colors[theme.primaryColor][0],
+      color: '#284258',
       maxWidth: rem(300),
   
       [theme.fn.smallerThan('sm')]: {
@@ -52,7 +53,7 @@ import {
     },
   
     social: {
-      color: theme.white,
+      color: '#284258',
   
       '&:hover': {
         color: theme.colors[theme.primaryColor][1],
@@ -74,32 +75,43 @@ import {
     },
   
     control: {
-      backgroundColor: theme.colors[theme.primaryColor][6],
+      backgroundColor: '#284258',
+      [theme.fn.smallerThan('sm')]: {
+        width: '100%',
+      },
     },
   }));
   
-  const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
-  
+const handlePhoneClick = () => {
+  window.location.href = 'tel:050 1234567';
+};
+
+const handleMailClick = () => {
+  window.location.href = 'mailto:sales@redknox.ae';
+};
+
 const ContactUs = () => {
     const { classes } = useStyles();
   
-    const icons = social.map((Icon, index) => (
-      <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
-        <Icon size="1.4rem" stroke={1.5} />
-      </ActionIcon>
-    ));
+    const icons = 
+      <>
+        <ActionIcon size={28} onClick={handlePhoneClick} className={classes.social} variant="transparent">
+          <IconPhone size="1.4rem" stroke={1.5} />
+        </ActionIcon><ActionIcon size={28} onClick={handleMailClick} className={classes.social} variant="transparent">
+            <IconMailFilled size="1.4rem" stroke={1.5} />
+          </ActionIcon>
+      </>
+    ;
   
     return (
-      <div className={classes.wrapper}>
+      <div className={classes.wrapper} id="contact-us">
         <SimpleGrid cols={2} spacing={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
           <div>
             <Title className={classes.title}>Contact us</Title>
             <Text className={classes.description} mt="sm" mb={30}>
               Leave your email and we will get back to you within 24 hours
             </Text>
-  
-            {/* <ContactIconsList variant="white" /> */}
-  
+    
             <Group mt="xl">{icons}</Group>
           </div>
           <div className={classes.form}>

@@ -1,10 +1,9 @@
 import { createStyles, Text, Container, ActionIcon, Group, rem } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
-import { MantineLogo } from '@mantine/ds';
+import { IconPhone, IconMailFilled } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme) => ({
   footer: {
-    marginTop: rem(120),
+    marginTop: rem(10),
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
     paddingBottom: `calc(${theme.spacing.xl} * 2)`,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
@@ -34,8 +33,8 @@ const useStyles = createStyles((theme) => ({
 
   inner: {
     display: 'flex',
-    justifyContent: 'space-between',
-
+    flexDirection: 'column',
+    alignItems: 'center',
     [theme.fn.smallerThan('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
@@ -104,6 +103,14 @@ const data = [{ title: 'string', links: [{ label: 'string', link: 'string' }]}, 
 const FooterLinks = () => {
   const { classes } = useStyles();
 
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:050 1234567';
+  };
+  
+  const handleMailClick = () => {
+    window.location.href = 'mailto:sales@redknox.ae';
+  };
+
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
       <Text
@@ -129,27 +136,25 @@ const FooterLinks = () => {
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <MantineLogo size={30} />
+        <Text fw={800} variant="gradient"
+              gradient={{ from: '#8c4a22', to: '#f6a951' }}
+              size="32px">RedKnox</Text>
           <Text size="xs" color="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+          Your One-Stop Solution for Global Sourcing, Procurement, and Supply Chain Excellence
           </Text>
         </div>
-        <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
+          © 2023. All rights reserved.
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
-          <ActionIcon size="lg">
-            <IconBrandTwitter size="1.05rem" stroke={1.5} />
+          <ActionIcon size="lg" onClick={handlePhoneClick}>
+            <IconPhone size="1.05rem" stroke={1.5} />
           </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandYoutube size="1.05rem" stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandInstagram size="1.05rem" stroke={1.5} />
+          <ActionIcon size="lg" onClick={handleMailClick}>
+            <IconMailFilled size="1.05rem" stroke={1.5} />
           </ActionIcon>
         </Group>
       </Container>

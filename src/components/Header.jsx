@@ -1,7 +1,6 @@
 import { createStyles, Header, Menu, Group, Center, Burger, Container, rem, Image, Text} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown } from '@tabler/icons-react';
-import { MantineLogo } from '@mantine/ds';
+import { Link as ScrollLink, Element } from 'react-scroll';
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -30,8 +29,9 @@ const useStyles = createStyles((theme) => ({
     borderRadius: theme.radius.sm,
     textDecoration: 'none',
     color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
-    fontSize: theme.fontSizes.sm,
-    fontWeight: 500,
+    fontSize: theme.fontSizes.md,
+    fontWeight: 700,
+    color: 'rgb(40, 66, 88)',
 
     '&:hover': {
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
@@ -48,39 +48,35 @@ const HeaderMenu = ({ links }) => {
   const { classes } = useStyles();
 
   const items = links.map((link) => {
-    const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
-    ));
+    let hrefValue = link.link; // Default to the provided link
 
-    if (menuItems) {
-      return (
-        <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
-          <Menu.Target>
-            <a
-              href={link.link}
-              className={classes.link}
-              onClick={(event) => event.preventDefault()}
-            >
-              <Center>
-                <span className={classes.linkLabel}>{link.label}</span>
-                <IconChevronDown size="0.9rem" stroke={1.5} />
-              </Center>
-            </a>
-          </Menu.Target>
-          <Menu.Dropdown>{menuItems}</Menu.Dropdown>
-        </Menu>
-      );
+    // Map specific links to component IDs
+    switch (link.link) {
+      case '/services':
+        hrefValue = 'hero-bullets'; // Use the ID of the HeroBullets component
+        break;
+      case '/about':
+        hrefValue = 'features-grid'; // Use the ID of the FeaturesGrid component
+        break;
+      case '/contact':
+        hrefValue = 'contact-us'; // Use the ID of the ContactUs component
+        break;
+      default:
+        break;
     }
 
     return (
-      <a
+      <ScrollLink
         key={link.label}
-        href={link.link}
+        to={hrefValue}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}
+        spy={true}
+        smooth={true}
+        duration={500} // Adjust this value for scroll speed
+        offset={0} // Adjust this value to account for the header height
       >
         {link.label}
-      </a>
+      </ScrollLink>
     );
   });
 
@@ -88,9 +84,10 @@ const HeaderMenu = ({ links }) => {
     <Header height={56} mb={0}>
       <Container>
         <div className={classes.inner}>
-          {/* <MantineLogo size={28} /> */}
-          {/* <Image src="./logo.png"/> */}
-          <Text fw={700}>RedKnox</Text>
+          <Image src="../../public/vercel.svg"/>
+          <Text fw={800} variant="gradient"
+              gradient={{ from: '#8c4a22', to: '#f6a951' }}
+              size="32px">RedKnox Global</Text>
           <Group spacing={5} className={classes.links}>
             {items}
           </Group>

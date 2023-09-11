@@ -8,19 +8,33 @@ import FooterLinks from '../components/Footer';
 import FeaturesGrid from '../components/Features';
 import FaqSimple from '../components/FAQ';
 import ContactUs from '../components/ContactForm';
+import Banner from '../components/Banner';
+import { Element } from 'react-scroll';
 
 
 const HomePage = () => {
   return (
-    <div>
-      <HeaderMenu links={[{ label: 'Our Services', link: '/services' }, { label: 'About Us', link: '/about' }, { label: 'Contact Us', link: '/contact' }, ]} />
-      <HeroImageRight/>
-      <HeroBullets/>
-      <FeaturesGrid/>
-      {/* <FaqSimple/> */}
-      <ContactUs />
-      <FooterLinks/>
-    </div>
+    <>
+      <Banner />
+      <HeaderMenu
+        links={[
+          { label: 'Our Services', link: '/services' },
+          { label: 'About Us', link: '/about' },
+          { label: 'Contact Us', link: '/contact' },
+        ]}
+      />
+      <HeroImageRight />
+      <Element name="features-grid">
+        <FeaturesGrid />
+      </Element>
+      <Element name="hero-bullets">
+        <HeroBullets />
+      </Element>
+      <Element name="contact-us">
+        <ContactUs />
+      </Element>
+      <FooterLinks />
+    </>
   );
 };
 
