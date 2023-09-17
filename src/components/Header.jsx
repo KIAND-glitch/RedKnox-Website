@@ -1,13 +1,22 @@
-import { createStyles, Header, Menu, Group, Center, Burger, Container, rem, Image, Text} from '@mantine/core';
+import { createStyles, Header, Menu, Group, Center, Burger, Container, rem, Text, Image, ActionIcon, useMantineTheme} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Link as ScrollLink, Element } from 'react-scroll';
 
 const useStyles = createStyles((theme) => ({
+
+  header: {
+    borderBottom: 0,
+  },
+
   inner: {
     height: rem(56),
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    [theme.fn.smallerThan('md')]: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
   },
 
   links: {
@@ -28,13 +37,15 @@ const useStyles = createStyles((theme) => ({
     padding: `${rem(8)} ${rem(12)}`,
     borderRadius: theme.radius.sm,
     textDecoration: 'none',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+    color: '#FFFFFF',
     fontSize: theme.fontSizes.md,
     fontWeight: 700,
-    color: 'rgb(40, 66, 88)',
 
     '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+      backgroundColor: theme.fn.lighten(
+        theme.fn.variant({ variant: 'filled', color: theme.primaryColor }).background,
+        0.1
+      ),
     },
   },
 
@@ -46,6 +57,7 @@ const useStyles = createStyles((theme) => ({
 const HeaderMenu = ({ links }) => {
   const [opened, { toggle }] = useDisclosure(false);
   const { classes } = useStyles();
+  const theme = useMantineTheme();
 
   const items = links.map((link) => {
     let hrefValue = link.link; // Default to the provided link
@@ -53,10 +65,11 @@ const HeaderMenu = ({ links }) => {
     // Map specific links to component IDs
     switch (link.link) {
       case '/services':
-        hrefValue = 'hero-bullets'; // Use the ID of the HeroBullets component
+        hrefValue = 'features-grid';
+         // Use the ID of the HeroBullets component
         break;
       case '/about':
-        hrefValue = 'features-grid'; // Use the ID of the FeaturesGrid component
+        hrefValue = 'hero-bullets';// Use the ID of the FeaturesGrid component
         break;
       case '/contact':
         hrefValue = 'contact-us'; // Use the ID of the ContactUs component
@@ -72,8 +85,8 @@ const HeaderMenu = ({ links }) => {
         className={classes.link}
         spy={true}
         smooth={true}
-        duration={500} // Adjust this value for scroll speed
-        offset={0} // Adjust this value to account for the header height
+        duration={500}
+        offset={0}
       >
         {link.label}
       </ScrollLink>
@@ -81,17 +94,24 @@ const HeaderMenu = ({ links }) => {
   });
 
   return (
-    <Header height={56} mb={0}>
+    <Header height={56} mb={0} className={classes.header} style={{ background: '#061879e8'}}>
       <Container>
         <div className={classes.inner}>
-          <Image src="../../public/vercel.svg"/>
-          <Text fw={800} variant="gradient"
-              gradient={{ from: '#8c4a22', to: '#f6a951' }}
-              size="32px">RedKnox Global</Text>
+          <div style={{display:'flex', gap: '16px'}}>
+          <ActionIcon>
+            <Image src="/images/redknox-logo.png" width={40} height={40} style={{marginBottom: '-10px'}}/>
+          </ActionIcon>
+          
+
+              <Text fw={800} size="24px" color='#db2727'>
+                RED<Text component='span' inherit color='white' size="26px">K</Text>NOX 
+                <Text component='span' inherit color='white'> GLOBAL</Text>
+              </Text>           
+          </div>
           <Group spacing={5} className={classes.links}>
             {items}
           </Group>
-          <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+          {/* <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" /> */}
         </div>
       </Container>
     </Header>

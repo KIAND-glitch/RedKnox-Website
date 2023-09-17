@@ -6,7 +6,7 @@ import { IconPhoneFilled, IconMailFilled } from '@tabler/icons-react';
 const useStyles = createStyles((theme) => ({
   container: {
     width: 'xl',
-    backgroundColor: '#c6d6e2',
+    backgroundColor: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).background,
     color: '#284258',
     padding: '16px',
     textAlign: 'center',
@@ -66,7 +66,7 @@ const Banner = () => {
   const iconStyle = {
     verticalAlign: 'middle',
     marginRight: '6px',
-    color: '#f6a951',
+    color: '#db2727',
     marginBottom: '6px',
   };
 

@@ -13,7 +13,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   logo: {
-    maxWidth: rem(200),
+    // maxWidth: rem(200),
 
     [theme.fn.smallerThan('sm')]: {
       display: 'flex',
@@ -95,6 +95,18 @@ const useStyles = createStyles((theme) => ({
       marginTop: theme.spacing.xs,
     },
   },
+
+  highlight: {
+    textAlign: 'center',
+    position: 'relative',
+    // backgroundColor: '#e7f5ff',
+    background: theme.fn.linearGradient(90, 'black', '#0044FF'),
+    borderRadius: theme.radius.sm,
+    padding: `${rem(4)} ${rem(12)}`,
+    [theme.fn.smallerThan('sm')]: {
+      padding: `${rem(2)} ${rem(2)}`,
+    },
+  },
 }));
 
 
@@ -136,9 +148,7 @@ const FooterLinks = () => {
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-        <Text fw={800} variant="gradient"
-              gradient={{ from: '#8c4a22', to: '#f6a951' }}
-              size="32px">RedKnox</Text>
+        <Text fw={800} color='#db2727' size="32px" className={classes.highlight}>Red<Text component='span' inherit color='white'>K</Text>nox <Text component='span' inherit color='white'>Global</Text></Text>
           <Text size="xs" color="dimmed" className={classes.description}>
           Your One-Stop Solution for Global Sourcing, Procurement, and Supply Chain Excellence
           </Text>
@@ -157,7 +167,18 @@ const FooterLinks = () => {
             <IconMailFilled size="1.05rem" stroke={1.5} />
           </ActionIcon>
         </Group>
+        
       </Container>
+      <div size='6px'>
+      <a href="https://www.flaticon.com/free-icons/logistic" title="logistic icons">Logistic icons created by noomtah - Flaticon</a>
+      <div> Icons made by <a href="https://www.flaticon.com/authors/kosonicon" title="kosonicon"> kosonicon </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+      <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+      <div> Icons made by <a href="https://www.flaticon.com/authors/parzival-1997" title="Parzival’ 1997"> Parzival’ 1997 </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+      <div> Icons made by <a href="https://www.flaticon.com/authors/designing-hub" title="Designing Hub"> Designing Hub </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+      <div> Icons made by <a href="https://www.flaticon.com/authors/iconjam" title="Iconjam"> Iconjam </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+      <div> Icons made by <a href="https://www.flaticon.com/authors/lutfix" title="lutfix"> lutfix </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+      <div> Icons made by <a href="https://www.flaticon.com/authors/circlon-tech" title="Circlon Tech"> Circlon Tech </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+      </div>
     </footer>
   );
 }

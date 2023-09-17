@@ -10,6 +10,7 @@ import FaqSimple from '../components/FAQ';
 import ContactUs from '../components/ContactForm';
 import Banner from '../components/Banner';
 import { Element } from 'react-scroll';
+import { Global } from '@mantine/core';
 
 
 const HomePage = () => {
@@ -24,7 +25,7 @@ const HomePage = () => {
         ]}
       />
       <HeroImageRight />
-      <Element name="features-grid">
+      <Element name="features-grid" style={{backgroundColor:'rgba(231, 245, 255, 1)'}}>
         <FeaturesGrid />
       </Element>
       <Element name="hero-bullets">

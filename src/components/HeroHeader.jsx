@@ -83,26 +83,20 @@ const HeroImageRight = () =>  {
       <Container size="xl">
         <div className={classes.inner}>
           <div className={classes.content}>
+
             <Title className={classes.title}>
-              <Text
-                component="span"
-                inherit
-                variant="gradient"
-                gradient={{ from: '#f6a951', to: '#8c4a22' }}
-              >
-                RedKnox
-              </Text>
-              
-               
+              <Text component='span' inherit color='#db2727'>
+                RED<Text component='span' inherit color='white'>K</Text>NOX 
+                <Text component='span' inherit color='white'> GLOBAL</Text>
+              </Text>           
             </Title>
 
             <Text className={classes.description} mt={30}>
-            Your One-Stop Solution for Global Sourcing, Procurement, and Supply Chain Excellence
+            RedKnox Global General Trading is a leading provider of integrated solutions for Sourcing and Procurement, Supply Chain Management and specialised Logistics services in UAE
             </Text>
 
             <Button
-              variant="gradient"
-              gradient={{ from: '#f6a951', to: '#8c4a22' }}
+              color="red"
               size="md"
               className={classes.control}
               mt={40}
