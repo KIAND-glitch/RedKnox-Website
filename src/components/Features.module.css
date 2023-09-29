@@ -1,0 +1,59 @@
+
+
+.SupplyChainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font: 'Greycliff CF';
+  gap: 20px;
+}
+
+.SupplyChainContainer > div {
+  padding: 20px;
+  background: rgb(0, 0, 255,0.1);
+  border-radius: 20px;
+}
+
+.heading {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.basicServicesGrid {
+  grid-template-columns: 1fr;
+}
+
+.extendedServicesGrid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .SupplyChainContainer {
+    flex-direction: column;
+  }
+  .extendedServicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet view */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .basicServicesGrid,
+  .extendedServicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .SupplyChainContainer {
+    flex-direction: column;
+  }
+}

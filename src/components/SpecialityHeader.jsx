@@ -12,9 +12,15 @@ import {
   } from '@mantine/core';
   
   const useStyles = createStyles((theme) => ({
+    container: {
+      maxWidth: 'unset',
+      // marginLeft: '0px',
+      // marginRight: '0px',
+    },
+
     inner: {
       display: 'flex',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
       paddingTop: `calc(${theme.spacing.xl} * 2)`,
       paddingBottom: `calc(${theme.spacing.xl} * 4)`,
       [theme.fn.smallerThan('sm')]: {
@@ -24,7 +30,7 @@ import {
     },
   
     content: {
-      maxWidth: rem(480),
+      maxWidth: rem(580),
       marginRight: `calc(${theme.spacing.xl} * 3)`,
   
       [theme.fn.smallerThan('sm')]: {
@@ -85,9 +91,10 @@ const HeroBullets = () => {
     const { classes } = useStyles();
     return (
       <div id="about-us">
-        <Container>
+        <Container className={classes.container}>
           <div className={classes.inner}>
-          <Image src='https://www.publicdomainpictures.net/pictures/490000/velka/global-delivery-service.jpg' className={classes.image} />
+          {/* <Image src="/images/courrier" className={classes.image} styles={{width: '100px'}}/> */}
+          <img src="/images/courrier-removebg-preview.png" alt="Courrier Image" width='600px' height='400px'/>
             <div className={classes.content}>
               <Title className={classes.title} >
                 The  <Text component='span' color='#db2727' className={classes.highlight}>Red<Text component='span' inherit color='white'>K</Text>nox <Text component='span' inherit color='white'>Global</Text></Text> difference <br />
@@ -96,7 +103,7 @@ const HeroBullets = () => {
               <List
                 mt={30}
                 spacing="sm"
-                size="sm"
+                size="md"
                 className={classes.list}
               >
                 <List.Item>

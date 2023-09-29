@@ -1,6 +1,8 @@
-import { ThemeIcon, Text, Title, Container, SimpleGrid, createStyles, rem, Image, List } from '@mantine/core';
+import { ThemeIcon, Text, Title, Container, SimpleGrid, createStyles, rem, Image, List, Flex } from '@mantine/core';
 import { IconPackage } from '@tabler/icons-react';
 import { IconTruck, IconCertificate, IconCoin } from '@tabler/icons-react';
+// Importing the CSS file into your SupplyChain.js component file
+import styles from './Features.module.css';
 
 const BasicServices = [
   {
@@ -42,6 +44,9 @@ const ExtendedServices =[
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
+    maxWidth: 'unset',
+    marginLeft: '0px',
+    marginRight: '0px',
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
     paddingBottom: `calc(${theme.spacing.xl} * 4)`,
     [theme.fn.smallerThan('sm')]: {
@@ -98,33 +103,37 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  grid1: {
-    marginBottom: theme.spacing.xl,
-    marginLeft: `calc(${theme.spacing.xl} * 3.5)`,
-    [theme.fn.smallerThan('md')]: {
-      marginLeft: `calc(${theme.spacing.sm} * 5)`,
-    },
-    [theme.fn.smallerThan('sm')]: {
-      marginLeft: `calc(${theme.spacing.sm} * 2.5)`,
-    },
-  },
-
-  grid2: {
-    marginBottom: theme.spacing.xl,
-    [theme.fn.smallerThan('md')]: {
-      marginLeft: `calc(${theme.spacing.sm} * 5)`,
-    },
-    [theme.fn.smallerThan('sm')]: {
-      marginLeft: `calc(${theme.spacing.sm} * 2.5)`,
-    },
-  },
-
   list: {
     padding: theme.spacing.xl,
     display: 'flex',
     justifyContent: 'center',
+    fontSize: '32px',
+  },
+
+  SupplyChainContainer: {
+    display: 'flex',
   }
 }));
+
+function SupplyChainComponent({ items1, items2 }) {
+  return (
+    <div className={styles.SupplyChainContainer}>
+      <div className={styles.BasicServices}>
+        <h3 className={styles.heading}>Basic Services</h3>
+        <div className={`${styles.grid} ${styles.basicServicesGrid}`}>
+          {items1}
+        </div>
+      </div>
+
+      <div className={styles.ExtendedServices}>
+        <h3 className={styles.heading}>Extended Services</h3>
+        <div className={`${styles.grid} ${styles.extendedServicesGrid}`}>
+          {items2}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 
 const FeaturesGrid = () => {
@@ -139,7 +148,7 @@ const FeaturesGrid = () => {
         Explore Our Services
       </Title>
 
-      <Text c="dimmed" className={classes.description} ta="center" mt="md">
+      <Text c="dimmed" className={classes.description} ta="center" mt="md" style={{fontSize: "1.15rem", fontWeight: "400"}}>
         Here are just some of the services we offer, please contact us to gain in-depth understanding of all our offerings. 
       </Text>
       <Container className={classes.list}>
@@ -147,6 +156,7 @@ const FeaturesGrid = () => {
           spacing="xs"
           size="lg"
           center
+          style={{fontSize: "1.25rem", fontWeight: "600"}}
           icon={
             <ThemeIcon color="#e7f5ff" size={32} radius="xl">
               <IconPackage size="1.5rem" color='black'/>
@@ -154,7 +164,7 @@ const FeaturesGrid = () => {
           }
         >
           <List.Item>Sourcing and Procurement</List.Item>
-            <List withPadding listStyleType="disc">
+            <List withPadding listStyleType="disc" style={{fontSize: "16px", fontWeight: "400"}}>
                   <List.Item>Automotive</List.Item>
                   <List.Item>Lighting fixtures</List.Item>
                   <List.Item>Industrial solutions</List.Item>
@@ -169,42 +179,9 @@ const FeaturesGrid = () => {
       <Title order={3} className={classes.title2} ta="center" mt="md">
         Supply Chain Portfolio
       </Title>
+      
+      <SupplyChainComponent items1={items1} items2={items2} />
 
-      <Title order={3} className={classes.title3} ta="center" mt="md">
-        Basic Services
-      </Title>
-
-      <SimpleGrid
-        mt={40}
-        mb={20}
-        cols={2}
-        // spacing={10}
-        breakpoints={[
-          { maxWidth: 980, cols: 2, spacing: 'xl' },
-          { maxWidth: 755, cols: 1, spacing: 'xl' },
-        ]}
-        className={classes.grid1}
-      >
-        {items1}
-      </SimpleGrid>
-
-      <Title order={3} className={classes.title3} ta="center" mt="md">
-        Extended Services
-      </Title>
-
-      <SimpleGrid
-        mt={40}
-        mb={20}
-        cols={3}
-        // spacing={30}
-        breakpoints={[
-          { maxWidth: 980, cols: 2, spacing: 'xl' },
-          { maxWidth: 755, cols: 1, spacing: 'xl' },
-        ]}
-        className={classes.grid2}
-      >
-        {items2}
-      </SimpleGrid>
     </Container>
   );
 }
@@ -212,31 +189,29 @@ const FeaturesGrid = () => {
 export default FeaturesGrid;
 
 const useStyles2 = createStyles((theme) => ({
-  feature: {
-    position: 'relative',
-    paddingTop: theme.spacing.xl,
-    paddingLeft: theme.spacing.xl,
-  },
-
-  overlay: {
-    position: 'absolute',
-    height: rem(120),
-    width: rem(280),
-    top: 0,
-    left: 0,
+  content: {
     backgroundColor: '#061879e8',
     borderRadius: '20px',
-    zIndex: 1,
-  },
-
-  content: {
-    position: 'relative',
+    height: rem(200),
+    width: rem(300),
     zIndex: 2,
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+    [theme.fn.smallerThan('sm')]: {
+      height: rem(100),
+      width: rem(300),
+    },
   },
 
   icon: {
-    width: '3rem',
-    height:'3rem',
+    width: '5rem',
+    height:'5rem',
+    [theme.fn.smallerThan('sm')]: {
+      width: '3rem',
+      height:'3rem',
+    },
   },
 
   title: {
@@ -248,16 +223,12 @@ function Feature2({ title, image, className, ...others }) {
   const { classes, cx } = useStyles2();
 
   return (
-    <div className={cx(classes.feature, className)} {...others}>
-      <div className={classes.overlay} />
-
       <div className={classes.content}>
         <Image src={image} className={classes.icon} width='3rem' height='3rem'/>
         <Text fw={700} fz="lg" mb="xs" mt={5} className={classes.title}>
           {title}
         </Text>
       </div>
-    </div>
   );
 }
 
