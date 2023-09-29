@@ -57,9 +57,7 @@ import {
       },
     },
   
-    image: {
-      flex: 1,
-  
+    image: {  
       [theme.fn.smallerThan('md')]: {
         display: 'none',
       },
@@ -94,7 +92,7 @@ const HeroBullets = () => {
         <Container className={classes.container}>
           <div className={classes.inner}>
           {/* <Image src="/images/courrier" className={classes.image} styles={{width: '100px'}}/> */}
-          <img src="/images/courrier-removebg-preview.png" alt="Courrier Image" width='600px' height='400px'/>
+          <img src="/images/courrier-removebg-preview.png" className={classes.image} alt="Courrier Image" width='500px' height='400px'/>
             <div className={classes.content}>
               <Title className={classes.title} >
                 The  <Text component='span' color='#db2727' className={classes.highlight}>Red<Text component='span' inherit color='white'>K</Text>nox <Text component='span' inherit color='white'>Global</Text></Text> difference <br />
