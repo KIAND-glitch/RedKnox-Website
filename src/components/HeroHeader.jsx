@@ -1,15 +1,14 @@
 import { createStyles, Container, Title, Text, Button, rem, Image } from '@mantine/core';
 
-
 const useStyles = createStyles((theme) => ({
   root: {
     backgroundColor: '#11284b',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundImage:
-      'linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 90%), url(https://www.natriologistics.com/wp-content/uploads/2023/06/Natrio-Global-Logistics-Distribution-Wharehouse.jpg)',
-    paddingTop: `calc(${theme.spacing.xl} * 7)`,
-    paddingBottom: `calc(${theme.spacing.xl} * 2)`,
+      'linear-gradient(220deg, rgba(130, 201, 30, 0) 0%, rgba(6, 35, 67, 0.9) 100%), url("/images/dall-e-hero-1.png")',
+    paddingTop: `calc(${theme.spacing.xl} * 10)`, // increased from 7 to 10
+    paddingBottom: `calc(${theme.spacing.xl} * 8)`, // increased from 2 to 5
   },
 
   inner: {
@@ -29,9 +28,10 @@ const useStyles = createStyles((theme) => ({
 
   content: {
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
-    paddingBottom: `calc(${theme.spacing.xl} * 2)`,
-    marginRight: `calc(${theme.spacing.xl} * 3)`,
-    marginLeft: `calc(${theme.spacing.xl} * 3)`,
+    paddingBottom: `calc(${theme.spacing.xl} * 1)`,
+    marginBottom: `calc(${theme.spacing.xl} * 2)`, // add this for bottom spacing
+    marginLeft: 'calc(${theme.spacing.xl} * 2)', // change this from the calculated value to 'auto'
+    marginRight: `auto`, // adjust this to increase or decrease right-side space
 
     [theme.fn.smallerThan('md')]: {
       marginRight: 0,
