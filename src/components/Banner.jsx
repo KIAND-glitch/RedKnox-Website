@@ -80,7 +80,7 @@ const Banner = () => {
 
         <Text size="lg" onClick={handlePhoneClick} className={classes.phone}>
           <IconPhoneFilled style={iconStyle} />
-          <span className={classes.ctaText}>050 1234567</span>
+          <span className={classes.ctaText}>+971 56894 730 </span>
         </Text>
       </div>
     </div>

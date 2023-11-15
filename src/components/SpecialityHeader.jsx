@@ -40,13 +40,17 @@ import {
     },
   
     title: {
-      // color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+      display: 'flex',
+      justifyContent: "center",
+      alignItems: 'center',
+      paddingTop: `calc(${theme.spacing.xl} * 2)`,
       fontFamily: `Greycliff CF, ${theme.fontFamily}`,
       fontSize: rem(34),
       lineHeight: 1.2,
       fontWeight: 900,
   
       [theme.fn.smallerThan('xs')]: {
+        flexDirection: 'column',
         fontSize: rem(28),
       },
     },
@@ -76,6 +80,7 @@ import {
     },
 
     list: {
+      fontSize: theme.fontSizes.xl,
       [theme.fn.smallerThan('sm')]: {
         maxWidth: '100%',
         marginRight: 0,
@@ -90,13 +95,15 @@ const HeroBullets = () => {
     return (
       <div id="about-us">
         <Container className={classes.container}>
+          <Title className={classes.title} >
+            The  
+            {/* <Text component='span' color='#db2727' className={classes.highlight}>Red<Text component='span' inherit color='white'>K</Text>nox <Text component='span' inherit color='white'>Global</Text></Text> */}
+            <Image src="/images/RedKnox_Global_1.png" className={classes.logo} width={350} height={60}/>
+              difference <br />
+          </Title>
           <div className={classes.inner}>
-          {/* <Image src="/images/courrier" className={classes.image} styles={{width: '100px'}}/> */}
-          <img src="/images/courrier-removebg-preview.png" className={classes.image} alt="Courrier Image" width='500px' height='400px'/>
+          <img src="/images/courier-package.png" className={classes.image} alt="Courrier Image" width='400px' height='400px'/>
             <div className={classes.content}>
-              <Title className={classes.title} >
-                The  <Text component='span' color='#db2727' className={classes.highlight}>Red<Text component='span' inherit color='white'>K</Text>nox <Text component='span' inherit color='white'>Global</Text></Text> difference <br />
-              </Title>
   
               <List
                 mt={30}

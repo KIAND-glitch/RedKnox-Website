@@ -1,4 +1,4 @@
-import { createStyles, Text, Container, ActionIcon, Group, rem } from '@mantine/core';
+import { createStyles, Text, Container, ActionIcon, Group, rem, Image } from '@mantine/core';
 import { IconPhone, IconMailFilled } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme) => ({
@@ -14,6 +14,9 @@ const useStyles = createStyles((theme) => ({
 
   logo: {
     // maxWidth: rem(200),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
 
     [theme.fn.smallerThan('sm')]: {
       display: 'flex',
@@ -148,7 +151,8 @@ const FooterLinks = () => {
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-        <Text fw={800} color='#db2727' size="32px" className={classes.highlight}>Red<Text component='span' inherit color='white'>K</Text>nox <Text component='span' inherit color='white'>Global</Text></Text>
+        <Image src="/images/RedKnox_Global_1.png" className={classes.logo} width={300} height={60}/>
+        {/* <Text fw={800} color='#db2727' size="32px" className={classes.highlight}>Red<Text component='span' inherit color='white'>K</Text>nox <Text component='span' inherit color='white'>Global</Text></Text> */}
           <Text size="xs" color="dimmed" className={classes.description}>
           Your One-Stop Solution for Global Sourcing, Procurement, and Supply Chain Excellence
           </Text>

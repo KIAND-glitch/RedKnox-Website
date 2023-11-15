@@ -1,44 +1,35 @@
 import { ThemeIcon, Text, Title, Container, SimpleGrid, createStyles, rem, Image, List, Flex } from '@mantine/core';
 import { IconPackage } from '@tabler/icons-react';
 import { IconTruck, IconCertificate, IconCoin } from '@tabler/icons-react';
-// Importing the CSS file into your SupplyChain.js component file
 import styles from './Features.module.css';
 
 const BasicServices = [
-  {
-    title: 'Air Express/Freight',
-    image: '/images/freight.png'
-  },
-  {
-    title: 'Customs Clearance',
-    image: '/images/custom-clearance.png'
-  },
-];
-
-const ExtendedServices =[
   {
     title: 'Strategic Sourcing',
     image: '/images/supply-chain-management.png'
   },
   {
-    title: 'Aftermarket Services',
-    image: '/images/call-center-service.png'
-  },
-  {
-    title: 'Reverse Logistics',
-    image: '/images/return.png'
+    title: 'Procurement',
+    image: '/images/procurement.png'
   },
   {
     title: 'Import - Export',
     image: '/images/export.png'
   },
+];
+
+const ExtendedServices =[
   {
-    title: 'Repair & Warranty Support',
-    image: '/images/insurance.png'
+    title: 'Value Added Services',
+    image: '/images/public-service.png'
   },
   {
-    title: 'Procurement',
-    image: '/images/procurement.png'
+    title: 'Project Logistics',
+    image: '/images/logistics.png'
+  },
+  {
+    title: 'Air Express/Freight',
+    image: '/images/freight.png'
   },
 ]
 
@@ -60,7 +51,7 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 900,
     marginBottom: theme.spacing.md,
     textAlign: 'center',
-    fontSize: '32px',
+    fontSize: `calc(${theme.fontSizes.xl} * 2)`,
     color: '#061879e8',
 
     [theme.fn.smallerThan('sm')]: {
@@ -74,7 +65,8 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 900,
     marginBottom: theme.spacing.md,
     textAlign: 'center',
-    fontSize: '28px',
+    fontSize: `calc(${theme.fontSizes.xl} * 1.75)`,
+    color: '#061879e8',
 
     [theme.fn.smallerThan('sm')]: {
       fontSize: rem(24),
@@ -97,6 +89,7 @@ const useStyles = createStyles((theme) => ({
 
   description: {
     textAlign: 'center',
+    fontSize: `calc(${theme.fontSizes.xl})`,
 
     [theme.fn.smallerThan('sm')]: {
       textAlign: 'center',
@@ -107,7 +100,8 @@ const useStyles = createStyles((theme) => ({
     padding: theme.spacing.xl,
     display: 'flex',
     justifyContent: 'center',
-    fontSize: '32px',
+    fontSize: `calc(${theme.fontSizes.xl} * 5)`,
+    marginBottom: `calc(${theme.spacing.xl} * 3)`,
   },
 
   SupplyChainContainer: {
@@ -135,7 +129,6 @@ function SupplyChainComponent({ items1, items2 }) {
   );
 }
 
-
 const FeaturesGrid = () => {
   const { classes } = useStyles();
 
@@ -148,23 +141,23 @@ const FeaturesGrid = () => {
         Explore Our Services
       </Title>
 
-      <Text c="dimmed" className={classes.description} ta="center" mt="md" style={{fontSize: "1.15rem", fontWeight: "400"}}>
-        Here are just some of the services we offer, please contact us to gain in-depth understanding of all our offerings. 
+      <Text c="dimmed" className={classes.description} ta="center" mt="md" style={{fontWeight: "400"}}>
+        Here are just some of the services we offer, please contact us to gain an in-depth understanding of all our offerings. 
       </Text>
       <Container className={classes.list}>
           <List
-          spacing="xs"
-          size="lg"
+          spacing="xl"
+          size="xl"
           center
-          style={{fontSize: "1.25rem", fontWeight: "600"}}
+          style={{fontWeight: "700", fontSize: `calc(1.5rem)`, margin: "10px"}}
           icon={
             <ThemeIcon color="#e7f5ff" size={32} radius="xl">
-              <IconPackage size="1.5rem" color='black'/>
+              <IconPackage size="1.75rem" color='black'/>
             </ThemeIcon>
           }
         >
           <List.Item>Sourcing and Procurement</List.Item>
-            <List withPadding listStyleType="disc" style={{fontSize: "16px", fontWeight: "400"}}>
+            <List spacing="2px" withPadding listStyleType="disc" style={{fontSize: "1.25rem", fontWeight: "600", marginLeft: "1rem"}}>
                   <List.Item>Automotive</List.Item>
                   <List.Item>Lighting fixtures</List.Item>
                   <List.Item>Industrial solutions</List.Item>
@@ -191,9 +184,9 @@ export default FeaturesGrid;
 const useStyles2 = createStyles((theme) => ({
   content: {
     backgroundColor: '#061879e8',
-    borderRadius: '20px',
+    borderRadius: '15px',
     height: rem(200),
-    width: rem(300),
+    width: '100%',
     zIndex: 2,
     display: 'flex',
     justifyContent: 'center',

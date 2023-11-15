@@ -168,7 +168,7 @@ const ContactUs = () => {
             />
             <TextInput
               label="Name"
-              placeholder="John Doe"
+              placeholder="First and Last Name"
               mt="md"
               required
               value={formData.name}
@@ -186,7 +186,7 @@ const ContactUs = () => {
             />
             <TextInput
               label="Phone Number"
-              placeholder="050 xxxxxxx"
+              placeholder="+971 xxxxxxxx"
               mt="md"
               required
               value={formData.phoneNumber}
