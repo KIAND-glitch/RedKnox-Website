@@ -1,4 +1,6 @@
 import { createStyles, Container, Title, Text, Button, rem, Image } from '@mantine/core';
+import { Link as ScrollLink, Element } from 'react-scroll';
+
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -8,7 +10,7 @@ const useStyles = createStyles((theme) => ({
     backgroundImage:
       'linear-gradient(220deg, rgba(130, 201, 30, 0) 0%, rgba(6, 35, 67, 0.9) 100%), url("/images/dall-e-hero-1.png")',
     paddingTop: `calc(${theme.spacing.xl} * 10)`, // increased from 7 to 10
-    paddingBottom: `calc(${theme.spacing.xl} * 8)`, // increased from 2 to 5
+    paddingBottom: `calc(${theme.spacing.xl} * 3)`, // increased from 2 to 5
   },
 
   inner: {
@@ -29,13 +31,14 @@ const useStyles = createStyles((theme) => ({
   content: {
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
     paddingBottom: `calc(${theme.spacing.xl} * 1)`,
-    marginBottom: `calc(${theme.spacing.xl} * 2)`, // add this for bottom spacing
+    marginBottom: `calc(${theme.spacing.xl} * 1)`, // add this for bottom spacing
     marginLeft: 'calc(${theme.spacing.xl} * 2)', // change this from the calculated value to 'auto'
     marginRight: `auto`, // adjust this to increase or decrease right-side space
 
     [theme.fn.smallerThan('md')]: {
       marginRight: 0,
       marginLeft: 0,
+      paddingBottom: 0,
     },
   },
 
@@ -56,7 +59,9 @@ const useStyles = createStyles((theme) => ({
 
   description: {
     color: theme.white,
-    opacity: 0.75,
+    opacity: 1,
+    fontSize: rem(20),
+    fontWeight: 400,
     maxWidth: rem(500),
 
     [theme.fn.smallerThan('md')]: {
@@ -84,25 +89,36 @@ const HeroImageRight = () =>  {
         <div className={classes.inner}>
           <div className={classes.content}>
 
-            <Title className={classes.title}>
+            {/* <Title className={classes.title}>
               <Text component='span' inherit color='#db2727'>
                 RED<Text component='span' inherit color='white'>K</Text>NOX 
                 <Text component='span' inherit color='white'> GLOBAL</Text>
               </Text>           
-            </Title>
+            </Title> */}
 
             <Text className={classes.description} mt={30}>
             RedKnox Global General Trading is a leading provider of integrated solutions for Sourcing and Procurement, Supply Chain Management and specialised Logistics services in UAE
             </Text>
 
-            <Button
-              color="red"
-              size="md"
-              className={classes.control}
-              mt={40}
+            <ScrollLink
+              to={'contact-us'}
+              className={classes.link}
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={0}
             >
-              Get in Touch
-            </Button>
+              <Button
+                    color="red"
+                    size="md"
+                    className={classes.control}
+                    mt={40}
+                  >
+                    Get in Touch
+                  </Button>
+            </ScrollLink>
+
+            
           </div>
         </div>
       </Container>

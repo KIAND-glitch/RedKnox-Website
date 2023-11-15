@@ -8,6 +8,14 @@ const useStyles = createStyles((theme) => ({
     borderBottom: 0,
   },
 
+  logo: {
+    paddingTop: 2,
+    paddingBottom: 0,
+    [theme.fn.smallerThan('md')]: {
+      paddingTop: 2,
+    },
+  },
+
   inner: {
     height: rem(56),
     display: 'flex',
@@ -38,7 +46,7 @@ const useStyles = createStyles((theme) => ({
     borderRadius: theme.radius.sm,
     textDecoration: 'none',
     color: '#FFFFFF',
-    fontSize: theme.fontSizes.md,
+    fontSize: theme.fontSizes.xl,
     fontWeight: 700,
 
     '&:hover': {
@@ -94,19 +102,13 @@ const HeaderMenu = ({ links }) => {
   });
 
   return (
-    <Header height={56} mb={0} className={classes.header} style={{ background: '#061879e8'}}>
+    <Header height={60} mb={0} className={classes.header} style={{ background: '#061879e8'}}>
       <Container>
         <div className={classes.inner}>
           <div style={{display:'flex', gap: '16px'}}>
-          <ActionIcon>
-            <Image src="/images/redknox-logo.png" width={40} height={40} style={{marginBottom: '-10px'}}/>
-          </ActionIcon>
-          
-
-              <Text fw={800} size="24px" color='#db2727'>
-                RED<Text component='span' inherit color='white' size="26px">K</Text>NOX 
-                <Text component='span' inherit color='white'> GLOBAL</Text>
-              </Text>           
+          <ActionIcon width={300} height={60}>
+            <Image src="/images/RedKnox_Global_1.png" className={classes.logo} width={300} height={60}/>
+          </ActionIcon>        
           </div>
           <Group spacing={5} className={classes.links}>
             {items}
