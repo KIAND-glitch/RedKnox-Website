@@ -5,8 +5,11 @@ import { IconPhoneFilled, IconMailFilled } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme) => ({
   container: {
+    position: 'sticky',
+    top: '0',
+    zIndex: '20',
     width: 'xl',
-    backgroundColor: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).background,
+    backgroundColor: '#cc2229',
     color: '#284258',
     padding: '16px',
     textAlign: 'center',
@@ -27,7 +30,7 @@ const useStyles = createStyles((theme) => ({
 
    mail: {
     cursor: 'pointer',
-    color: '#284258',
+    color: 'white',
     [theme.fn.smallerThan('sm')]: {
       display: 'flex',
       alignItems: 'center',
@@ -38,7 +41,7 @@ const useStyles = createStyles((theme) => ({
    phone: {
     cursor: 'pointer',
     marginLeft: '54px', 
-    color: '#284258',
+    color: 'white',
     [theme.fn.smallerThan('sm')]: {
       display: 'flex',
       alignItems: 'center',
@@ -66,7 +69,7 @@ const Banner = () => {
   const iconStyle = {
     verticalAlign: 'middle',
     marginRight: '6px',
-    color: '#db2727',
+    color: '#f8cb53',
     marginBottom: '6px',
   };
 

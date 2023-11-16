@@ -2,6 +2,7 @@ import { ThemeIcon, Text, Title, Container, SimpleGrid, createStyles, rem, Image
 import { IconPackage } from '@tabler/icons-react';
 import { IconTruck, IconCertificate, IconCoin } from '@tabler/icons-react';
 import styles from './Features.module.css';
+import FeaturesCards from './FeaturesCards';
 
 const BasicServices = [
   {
@@ -33,6 +34,21 @@ const ExtendedServices =[
   },
 ]
 
+const Services =[
+  {
+    title: 'Sourcing and Procurement',
+    image: '/images/public-service.png'
+  },
+  {
+    title: 'Supply Chain Management Solutions',
+    image: '/images/logistics.png'
+  },
+  {
+    title: 'Specialised Project Logistics',
+    image: '/images/freight.png'
+  },
+]
+
 const useStyles = createStyles((theme) => ({
   wrapper: {
     maxWidth: 'unset',
@@ -52,7 +68,7 @@ const useStyles = createStyles((theme) => ({
     marginBottom: theme.spacing.md,
     textAlign: 'center',
     fontSize: `calc(${theme.fontSizes.xl} * 2)`,
-    color: '#061879e8',
+    color: '#393232',
 
     [theme.fn.smallerThan('sm')]: {
       fontSize: rem(28),
@@ -66,7 +82,7 @@ const useStyles = createStyles((theme) => ({
     marginBottom: theme.spacing.md,
     textAlign: 'center',
     fontSize: `calc(${theme.fontSizes.xl} * 1.75)`,
-    color: '#061879e8',
+    color: '#393232',
 
     [theme.fn.smallerThan('sm')]: {
       fontSize: rem(24),
@@ -137,6 +153,7 @@ const FeaturesGrid = () => {
 
   return (
     <Container className={classes.wrapper} id="our-services">
+      {/* <FeaturesCards/> */}
       <Title order={2} className={classes.title} ta="center">
         Explore Our Services
       </Title>
@@ -183,7 +200,7 @@ export default FeaturesGrid;
 
 const useStyles2 = createStyles((theme) => ({
   content: {
-    backgroundColor: '#061879e8',
+    backgroundColor: 'white',
     borderRadius: '15px',
     height: rem(200),
     width: '100%',
@@ -201,6 +218,7 @@ const useStyles2 = createStyles((theme) => ({
   icon: {
     width: '5rem',
     height:'5rem',
+    color: 'red',
     [theme.fn.smallerThan('sm')]: {
       width: '3rem',
       height:'3rem',
@@ -208,7 +226,7 @@ const useStyles2 = createStyles((theme) => ({
   },
 
   title: {
-    color: 'white',
+    color: '#393232',
   },
 }));
 
