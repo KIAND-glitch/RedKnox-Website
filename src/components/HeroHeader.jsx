@@ -5,12 +5,15 @@ import { Link as ScrollLink, Element } from 'react-scroll';
 const useStyles = createStyles((theme) => ({
   root: {
     backgroundColor: '#11284b',
-    backgroundSize: 'cover',
+    backgroundSize: '100% 100%',
     backgroundPosition: 'center',
     backgroundImage:
-      'linear-gradient(220deg, rgba(130, 201, 30, 0) 0%, rgba(6, 35, 67, 0.9) 100%), url("/images/dall-e-hero-1.png")',
+      'linear-gradient(220deg, rgba(130, 201, 30, 0) 0%, rgba(6, 35, 67, 0.9) 100%), url("/images/dall-e-hero-5.png")',
     paddingTop: `calc(${theme.spacing.xl} * 10)`, // increased from 7 to 10
     paddingBottom: `calc(${theme.spacing.xl} * 3)`, // increased from 2 to 5
+    [theme.fn.smallerThan('md')]: {
+      backgroundSize: 'cover',
+    },
   },
 
   inner: {

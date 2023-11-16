@@ -45,13 +45,13 @@ const useStyles = createStyles((theme) => ({
     padding: `${rem(8)} ${rem(12)}`,
     borderRadius: theme.radius.sm,
     textDecoration: 'none',
-    color: '#FFFFFF',
+    color: '#393232',
     fontSize: theme.fontSizes.xl,
     fontWeight: 700,
 
     '&:hover': {
       backgroundColor: theme.fn.lighten(
-        theme.fn.variant({ variant: 'filled', color: theme.primaryColor }).background,
+        '#F6F6F6',
         0.1
       ),
     },
@@ -102,7 +102,7 @@ const HeaderMenu = ({ links }) => {
   });
 
   return (
-    <Header height={60} mb={0} className={classes.header} style={{ background: '#061879e8'}}>
+    <Header height={60} mb={0} className={classes.header} style={{ background: 'white'}}>
       <Container>
         <div className={classes.inner}>
           <div style={{display:'flex', gap: '16px'}}>

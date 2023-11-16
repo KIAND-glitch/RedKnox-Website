@@ -25,10 +25,10 @@ const HomePage = () => {
         ]}
       />
       <HeroImageRight />
-      <Element name="features-grid" style={{backgroundColor:'rgba(231, 245, 255, 1)'}}>
+      <Element name="features-grid" style={{backgroundColor:'#f6f6f6'}}>
         <FeaturesGrid />
       </Element>
-      <Element name="hero-bullets">
+      <Element name="hero-bullets" style={{backgroundColor:'white'}}>
         <HeroBullets />
       </Element>
       <Element name="contact-us">

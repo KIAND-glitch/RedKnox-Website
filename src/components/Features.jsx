@@ -2,6 +2,7 @@ import { ThemeIcon, Text, Title, Container, SimpleGrid, createStyles, rem, Image
 import { IconPackage } from '@tabler/icons-react';
 import { IconTruck, IconCertificate, IconCoin } from '@tabler/icons-react';
 import styles from './Features.module.css';
+import FeaturesCards from './FeaturesCards';
 
 const BasicServices = [
   {
@@ -33,6 +34,21 @@ const ExtendedServices =[
   },
 ]
 
+const Services =[
+  {
+    title: 'Sourcing and Procurement',
+    image: '/images/public-service.png'
+  },
+  {
+    title: 'Supply Chain Management Solutions',
+    image: '/images/logistics.png'
+  },
+  {
+    title: 'Specialised Project Logistics',
+    image: '/images/freight.png'
+  },
+]
+
 const useStyles = createStyles((theme) => ({
   wrapper: {
     maxWidth: 'unset',
@@ -52,7 +68,7 @@ const useStyles = createStyles((theme) => ({
     marginBottom: theme.spacing.md,
     textAlign: 'center',
     fontSize: `calc(${theme.fontSizes.xl} * 2)`,
-    color: '#061879e8',
+    color: '#393232',
 
     [theme.fn.smallerThan('sm')]: {
       fontSize: rem(28),
@@ -66,7 +82,7 @@ const useStyles = createStyles((theme) => ({
     marginBottom: theme.spacing.md,
     textAlign: 'center',
     fontSize: `calc(${theme.fontSizes.xl} * 1.75)`,
-    color: '#061879e8',
+    color: '#393232',
 
     [theme.fn.smallerThan('sm')]: {
       fontSize: rem(24),
@@ -137,38 +153,7 @@ const FeaturesGrid = () => {
 
   return (
     <Container className={classes.wrapper} id="our-services">
-      <Title order={2} className={classes.title} ta="center">
-        Explore Our Services
-      </Title>
-
-      <Text c="dimmed" className={classes.description} ta="center" mt="md" style={{fontWeight: "400"}}>
-        Here are just some of the services we offer, please contact us to gain an in-depth understanding of all our offerings. 
-      </Text>
-      <Container className={classes.list}>
-          <List
-          spacing="xl"
-          size="xl"
-          center
-          style={{fontWeight: "700", fontSize: `calc(1.5rem)`, margin: "10px"}}
-          icon={
-            <ThemeIcon color="#e7f5ff" size={32} radius="xl">
-              <IconPackage size="1.75rem" color='black'/>
-            </ThemeIcon>
-          }
-        >
-          <List.Item>Sourcing and Procurement</List.Item>
-            <List spacing="2px" withPadding listStyleType="disc" style={{fontSize: "1.25rem", fontWeight: "600", marginLeft: "1rem"}}>
-                  <List.Item>Automotive</List.Item>
-                  <List.Item>Lighting fixtures</List.Item>
-                  <List.Item>Industrial solutions</List.Item>
-                  <List.Item>{'Project equipment & supplies'}</List.Item>
-                  
-              </List>
-          <List.Item>Supply chain management solutions</List.Item>
-          <List.Item>Specialised Project Logistics</List.Item>
-        </List>
-      </Container>
-
+      <FeaturesCards/>
       <Title order={3} className={classes.title2} ta="center" mt="md">
         Supply Chain Portfolio
       </Title>
@@ -183,7 +168,7 @@ export default FeaturesGrid;
 
 const useStyles2 = createStyles((theme) => ({
   content: {
-    backgroundColor: '#061879e8',
+    backgroundColor: 'white',
     borderRadius: '15px',
     height: rem(200),
     width: '100%',
@@ -201,6 +186,7 @@ const useStyles2 = createStyles((theme) => ({
   icon: {
     width: '5rem',
     height:'5rem',
+    color: 'red',
     [theme.fn.smallerThan('sm')]: {
       width: '3rem',
       height:'3rem',
@@ -208,7 +194,7 @@ const useStyles2 = createStyles((theme) => ({
   },
 
   title: {
-    color: 'white',
+    color: '#393232',
   },
 }));
 

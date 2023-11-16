@@ -24,7 +24,7 @@ const FORMSPARK_FORM_ID = "UYTfMgZo";
     wrapper: {
       minHeight: 400,
       boxSizing: 'border-box',
-      backgroundColor: 'rgba(231, 245, 255, 1)',
+      backgroundColor: '#f6f6f6',
       borderRadius: theme.radius.md,
       padding: `calc(${theme.spacing.xl} * 4.5)`,
       paddingLeft: `calc(${theme.spacing.xl} * 10)`,
@@ -45,12 +45,12 @@ const FORMSPARK_FORM_ID = "UYTfMgZo";
   
     title: {
       fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-      color: '#284258',
+      color: '#393232',
       lineHeight: 1,
     },
   
     description: {
-      color: '#284258',
+      color: '#393232',
       maxWidth: rem(300),
   
       [theme.fn.smallerThan('sm')]: {
@@ -66,10 +66,10 @@ const FORMSPARK_FORM_ID = "UYTfMgZo";
     },
   
     social: {
-      color: '#284258',
+      color: '#cc2229',
   
       '&:hover': {
-        color: theme.colors[theme.primaryColor][1],
+        color: 'rgb(248, 203, 83)',
       },
     },
   
@@ -88,7 +88,7 @@ const FORMSPARK_FORM_ID = "UYTfMgZo";
     },
   
     control: {
-      backgroundColor: '#284258',
+      backgroundColor: '#cc2229',
       [theme.fn.smallerThan('sm')]: {
         width: '100%',
       },
