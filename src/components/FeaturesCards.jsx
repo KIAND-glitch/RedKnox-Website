@@ -8,67 +8,76 @@ import {
     SimpleGrid,
     Container,
     useMantineTheme,
-    createStyles
+    createStyles,
+    List
 } from '@mantine/core';
 import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';
 
 const mockdata = [
     {
-      title: 'Extreme performance',
+      title: 'Sourcing and Procurement',
       description:
-        'This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit',
+        ' ',
+      additionalContent: (
+        <List listStyleType="disc">
+            <List.Item>Automotive</List.Item>
+            <List.Item>Lighting fixtures</List.Item>
+            <List.Item>Industrial solutions</List.Item>
+            <List.Item>Project equipment & supplies</List.Item>
+        </List>
+      ),
       icon: IconGauge,
     },
     {
-      title: 'Privacy focused',
+      title: 'Supply chain management solutions',
       description:
-        'People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma',
+        '',
       icon: IconUser,
     },
     {
-      title: 'No third parties',
+      title: 'Specialised Project Logistics',
       description:
-        'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves',
+        '',
       icon: IconCookie,
     },
   ];
 
   const useStyles = createStyles((theme) => ({
     title: {
-        fontSize: '34px',
-        fontWeight: 900,
-        [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-            fontSize: '24px',
-        },
+      fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+      fontWeight: 900,
+      marginBottom: theme.spacing.md,
+      textAlign: 'center',
+      fontSize: `calc(${theme.fontSizes.xl} * 2)`,
+      color: '#393232',
+  
+      [theme.fn.smallerThan('sm')]: {
+        fontSize: '1.75rem',
+        textAlign: 'center',
+      },
     },
     description: {
-        maxWidth: '600px',
-        margin: 'auto',
-        '&::after': {
-            content: '""',
-            display: 'block',
-            backgroundColor: theme.colors.blue[6],
-            width: '45px',
-            height: '2px',
-            marginTop: theme.spacing.sm,
-            marginLeft: 'auto',
-            marginRight: 'auto',
-        },
+      textAlign: 'center',
+      fontSize: `calc(${theme.fontSizes.xl})`,
+  
+      [theme.fn.smallerThan('sm')]: {
+        textAlign: 'center',
+      },
     },
+
     card: {
-        border: `1px solid black`,
+        border: `1px solid none`,
     },
     cardTitle: {
         '&::after': {
             content: '""',
             display: 'block',
-            backgroundColor: theme.colors.blue[6],
+            backgroundColor: '#cc2229',
             width: '45px',
             height: '2px',
             marginTop: theme.spacing.sm,
         },
     },
-    // Other styles...
 }));
 
 
@@ -81,7 +90,7 @@ const FeaturesCards = () => {
             <feature.icon
                 style={{ width: 50, height: 50 }}
                 stroke={2}
-                color={theme.colors.blue[6]}
+                color='#cc2229'
             />
             <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
                 {feature.title}
@@ -89,27 +98,28 @@ const FeaturesCards = () => {
             <Text size="sm" color="dimmed" mt="sm">
                 {feature.description}
             </Text>
+            {feature.additionalContent}
         </Card>
     ));
 
     return (
         <Container size="lg" py="xl">
-        <Group justify="center">
-          <Badge variant="filled" size="lg">
-            Best company ever
-          </Badge>
-        </Group>
   
         <Title order={2} className={classes.title} ta="center" mt="sm">
-          Integrate effortlessly with any technology stack
+        Explore Our Services
         </Title>
   
-        <Text c="dimmed" className={classes.description} ta="center" mt="md">
-          Every once in a while, you’ll see a Golbat that’s missing some fangs. This happens when
-          hunger drives it to try biting a Steel-type Pokémon.
-        </Text>
+        <Text c="dimmed" className={classes.description} ta="center" mt="md" style={{fontWeight: "400"}}>
+        Here are just some of the services we offer, please contact us to gain an in-depth understanding of all our offerings. 
+      </Text>
   
-        <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
+        <SimpleGrid cols={3} spacing="xl" mt={50}
+        breakpoints={[
+          { maxWidth: 'md', cols: 3, spacing: 'md' },
+          { maxWidth: 'sm', cols: 1, spacing: 'md' },
+          { maxWidth: 'xs', cols: 1, spacing: 'md' },
+        ]}
+        >
           {features}
         </SimpleGrid>
       </Container>

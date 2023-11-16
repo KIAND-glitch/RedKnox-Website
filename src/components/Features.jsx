@@ -153,39 +153,7 @@ const FeaturesGrid = () => {
 
   return (
     <Container className={classes.wrapper} id="our-services">
-      {/* <FeaturesCards/> */}
-      <Title order={2} className={classes.title} ta="center">
-        Explore Our Services
-      </Title>
-
-      <Text c="dimmed" className={classes.description} ta="center" mt="md" style={{fontWeight: "400"}}>
-        Here are just some of the services we offer, please contact us to gain an in-depth understanding of all our offerings. 
-      </Text>
-      <Container className={classes.list}>
-          <List
-          spacing="xl"
-          size="xl"
-          center
-          style={{fontWeight: "700", fontSize: `calc(1.5rem)`, margin: "10px"}}
-          icon={
-            <ThemeIcon color="#e7f5ff" size={32} radius="xl">
-              <IconPackage size="1.75rem" color='black'/>
-            </ThemeIcon>
-          }
-        >
-          <List.Item>Sourcing and Procurement</List.Item>
-            <List spacing="2px" withPadding listStyleType="disc" style={{fontSize: "1.25rem", fontWeight: "600", marginLeft: "1rem"}}>
-                  <List.Item>Automotive</List.Item>
-                  <List.Item>Lighting fixtures</List.Item>
-                  <List.Item>Industrial solutions</List.Item>
-                  <List.Item>{'Project equipment & supplies'}</List.Item>
-                  
-              </List>
-          <List.Item>Supply chain management solutions</List.Item>
-          <List.Item>Specialised Project Logistics</List.Item>
-        </List>
-      </Container>
-
+      <FeaturesCards/>
       <Title order={3} className={classes.title2} ta="center" mt="md">
         Supply Chain Portfolio
       </Title>
