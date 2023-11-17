@@ -46,11 +46,19 @@ const useStyles = createStyles((theme) => ({
       display: 'flex',
       alignItems: 'center',
       flexDirection: 'column',
-      marginLeft: '54px',
+      marginLeft: '24px',
     },
    },
 
    ctaText: {
+    fontWeight: 'bold',
+    color: 'white',
+    textDecoration: 'none', // Remove underline
+    WebkitTextDecoration: 'none', // Specific for WebKit browsers like Safari
+    MozTextDecoration: 'none', // Specific for Firefox
+  },
+
+  linkStyle : {
     fontWeight: 'bold',
     color: 'white',
     textDecoration: 'none', // Remove underline
@@ -63,7 +71,7 @@ const Banner = () => {
   const { classes } = useStyles();
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:+971 56 894730';
+    window.location.href = 'tel:+971 56 8947430';
   };
 
   const handleMailClick = () => {
@@ -84,11 +92,13 @@ const Banner = () => {
           <IconMailFilled style={iconStyle} /> 
           <span className={classes.ctaText}>sales@redknox.ae</span>
         </Text>
-
+        <a href="tel:+97156894730" className={classes.linkStyle}>
         <Text size="lg" onClick={handlePhoneClick} className={classes.phone}>
           <IconPhoneFilled style={iconStyle} />
-          <span className={classes.ctaText}>+971 56 894730</span>
+          <span className={classes.ctaText}>+971 56 8947430</span>
         </Text>
+        </a>
+
       </div>
     </div>
   );
