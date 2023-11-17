@@ -92,7 +92,7 @@ const Banner = () => {
           <IconMailFilled style={iconStyle} /> 
           <span className={classes.ctaText}>sales@redknox.ae</span>
         </Text>
-        <a href="tel:+97156894730" className={classes.linkStyle}>
+        <a href="tel:+971568947430" className={classes.linkStyle}>
         <Text size="lg" onClick={handlePhoneClick} className={classes.phone}>
           <IconPhoneFilled style={iconStyle} />
           <span className={classes.ctaText}>+971 56 8947430</span>
