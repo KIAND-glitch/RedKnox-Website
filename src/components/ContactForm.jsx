@@ -167,7 +167,7 @@ const ContactUs = () => {
             
           </Group>
 
-              <a href="tel:+97156894730" className={classes.linkStyle}>
+              <a href="tel:+971568947430" className={classes.linkStyle}>
                 <Text mb='10px'>+971 56 8947430</Text>
               </a>
               <a href="tel:+971568947446" className={classes.linkStyle}>
