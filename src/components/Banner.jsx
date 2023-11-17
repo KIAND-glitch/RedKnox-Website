@@ -53,15 +53,17 @@ const useStyles = createStyles((theme) => ({
    ctaText: {
     fontWeight: 'bold',
     color: 'white',
-    textDecoration: 'none',
-   }
+    textDecoration: 'none', // Remove underline
+    WebkitTextDecoration: 'none', // Specific for WebKit browsers like Safari
+    MozTextDecoration: 'none', // Specific for Firefox
+  }
 }));
 
 const Banner = () => {
   const { classes } = useStyles();
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:+971 56894 730';
+    window.location.href = 'tel:+971 56 894730';
   };
 
   const handleMailClick = () => {
@@ -85,7 +87,7 @@ const Banner = () => {
 
         <Text size="lg" onClick={handlePhoneClick} className={classes.phone}>
           <IconPhoneFilled style={iconStyle} />
-          <span className={classes.ctaText}>+971 56894 730</span>
+          <span className={classes.ctaText}>+971 56 894730</span>
         </Text>
       </div>
     </div>
