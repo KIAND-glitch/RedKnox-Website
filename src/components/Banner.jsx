@@ -51,7 +51,9 @@ const useStyles = createStyles((theme) => ({
    },
 
    ctaText: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: 'white',
+    textDecoration: 'none',
    }
 }));
 
