@@ -119,7 +119,7 @@ const FooterLinks = () => {
   const { classes } = useStyles();
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:+971 56894 730';
+    window.location.href = 'tel:+971 56894 7430';
   };
   
   const handleMailClick = () => {
