@@ -119,7 +119,7 @@ const FooterLinks = () => {
   const { classes } = useStyles();
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:050 1234567';
+    window.location.href = 'tel:+971 56894 730';
   };
   
   const handleMailClick = () => {
@@ -153,7 +153,7 @@ const FooterLinks = () => {
         <div className={classes.logo}>
         <Image src="/images/RedKnox_Global_1.png" className={classes.logo} width={300} height={60}/>
         {/* <Text fw={800} color='#db2727' size="32px" className={classes.highlight}>Red<Text component='span' inherit color='white'>K</Text>nox <Text component='span' inherit color='white'>Global</Text></Text> */}
-          <Text size="xs" color="dimmed" className={classes.description}>
+          <Text size="md" color="dimmed" className={classes.description}>
           Your One-Stop Solution for Global Sourcing, Procurement, and Supply Chain Excellence
           </Text>
         </div>
@@ -165,15 +165,15 @@ const FooterLinks = () => {
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
           <ActionIcon size="lg" onClick={handlePhoneClick}>
-            <IconPhone size="1.05rem" stroke={1.5} />
+            <IconPhone size="1.25rem" stroke={1.5} />
           </ActionIcon>
           <ActionIcon size="lg" onClick={handleMailClick}>
-            <IconMailFilled size="1.05rem" stroke={1.5} />
+            <IconMailFilled size="1.25rem" stroke={1.5} />
           </ActionIcon>
         </Group>
         
       </Container>
-      <div size='6px'>
+      {/* <div size='6px'>
       <a href="https://www.flaticon.com/free-icons/logistic" title="logistic icons">Logistic icons created by noomtah - Flaticon</a>
       <div> Icons made by <a href="https://www.flaticon.com/authors/kosonicon" title="kosonicon"> kosonicon </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
       <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
@@ -182,7 +182,7 @@ const FooterLinks = () => {
       <div> Icons made by <a href="https://www.flaticon.com/authors/iconjam" title="Iconjam"> Iconjam </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
       <div> Icons made by <a href="https://www.flaticon.com/authors/lutfix" title="lutfix"> lutfix </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
       <div> Icons made by <a href="https://www.flaticon.com/authors/circlon-tech" title="Circlon Tech"> Circlon Tech </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
-      </div>
+      </div> */}
     </footer>
   );
 }

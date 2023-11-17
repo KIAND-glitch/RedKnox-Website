@@ -154,11 +154,11 @@ const FeaturesGrid = () => {
   return (
     <Container className={classes.wrapper} id="our-services">
       <FeaturesCards/>
-      <Title order={3} className={classes.title2} ta="center" mt="md">
+      {/* <Title order={3} className={classes.title2} ta="center" mt="md">
         Supply Chain Portfolio
       </Title>
       
-      <SupplyChainComponent items1={items1} items2={items2} />
+      <SupplyChainComponent items1={items1} items2={items2} /> */}
 
     </Container>
   );
