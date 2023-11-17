@@ -167,14 +167,14 @@ const ContactUs = () => {
             
           </Group>
 
-          <a href="tel:+97156894730" className={classes.linkStyle}>
+              <a href="tel:+97156894730" className={classes.linkStyle}>
                 <Text mb='10px'>+971 56 894730</Text>
-              </a>
-              <a href="tel:+971568947446" className={classes.linkStyle}>
-                <Text mb='10px'>+971 56 8947446</Text>
               </a>
               <a href="tel:+97143306654" className={classes.linkStyle}>
                 <Text mb='10px'>+971 43 306654</Text>
+              </a>
+              <a href="tel:+971568947446" className={classes.linkStyle}>
+                <Text mb='10px'>+971 56 8947446</Text>
               </a>
         </div>
         <div className={classes.form}>
@@ -207,7 +207,7 @@ const ContactUs = () => {
             />
             <TextInput
               label="Phone Number"
-              placeholder="+971 xxxxxxxx"
+              placeholder="+971 xx xxxxxx"
               mt="md"
               required
               value={formData.phoneNumber}
