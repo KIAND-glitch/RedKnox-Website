@@ -23,9 +23,11 @@ import {
       justifyContent: 'center',
       paddingTop: `calc(${theme.spacing.xl} * 2)`,
       paddingBottom: `calc(${theme.spacing.xl} * 4)`,
-      [theme.fn.smallerThan('sm')]: {
+      [theme.fn.smallerThan('md')]: {
         paddingTop: `calc(${theme.spacing.xl})`,
         paddingBottom: `calc(${theme.spacing.xl} * 2)`,
+        flexDirection: 'column',
+        alignItems: 'center',
       },
     },
   
@@ -63,7 +65,7 @@ import {
   
     image: {  
       [theme.fn.smallerThan('md')]: {
-        display: 'none',
+        width: '350px'
       },
     },
   
@@ -102,7 +104,7 @@ const HeroBullets = () => {
               difference <br />
           </Title>
           <div className={classes.inner}>
-          <img src="/images/courier-package.png" className={classes.image} alt="Courrier Image" width='400px' height='400px'/>
+          <img src="/images/courier-package-2.png" className={classes.image} alt="Courrier Image" width='400px' height='400px'/>
             <div className={classes.content}>
   
               <List

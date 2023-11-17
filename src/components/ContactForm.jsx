@@ -93,10 +93,19 @@ const FORMSPARK_FORM_ID = "UYTfMgZo";
         width: '100%',
       },
     },
+
+    linkStyle : {
+      color: '#393232',
+      textDecoration: 'underline', // Add underline to links
+      textDecorationColor: '#cc2229', // Set the underline color to red
+      textDecorationThickness: '2px', // Optional: Set the thickness of the underline
+      textUnderlineOffset: '3px', // Optional: Adjust the position of the underline
+      fontSize: '1.15rem',
+    }
   }));
   
 const handlePhoneClick = () => {
-  window.location.href = 'tel:050 1234567';
+  window.location.href = 'tel:+971 56894 730 ';
 };
 
 const handleMailClick = () => {
@@ -147,14 +156,26 @@ const ContactUs = () => {
             Leave your email, and we will get back to you within 24 hours
           </Text>
 
-          <Group mt="xl">
+          <Group mt="xl" mb='20px'>
             <ActionIcon size={28} onClick={handlePhoneClick} className={classes.social} variant="transparent">
-              <IconPhone size="1.4rem" stroke={1.5} />
+              <IconPhone size="1.75rem" stroke={1.5} />
             </ActionIcon>
             <ActionIcon size={28} onClick={handleMailClick} className={classes.social} variant="transparent">
-              <IconMailFilled size="1.4rem" stroke={1.5} />
+              <IconMailFilled size="1.75rem" stroke={1.5} />
             </ActionIcon>
+
+            
           </Group>
+
+          <a href="tel:+97156894730" className={classes.linkStyle}>
+                <Text mb='10px'>+971 56 894730</Text>
+              </a>
+              <a href="tel:+971568947446" className={classes.linkStyle}>
+                <Text mb='10px'>+971 56 8947446</Text>
+              </a>
+              <a href="tel:+97143306654" className={classes.linkStyle}>
+                <Text mb='10px'>+971 43 306654</Text>
+              </a>
         </div>
         <div className={classes.form}>
           <form onSubmit={onSubmit}>

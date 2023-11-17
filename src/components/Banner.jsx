@@ -11,7 +11,7 @@ const useStyles = createStyles((theme) => ({
     width: 'xl',
     backgroundColor: '#cc2229',
     color: '#284258',
-    padding: '16px',
+    padding: '8px',
     textAlign: 'center',
     display: 'flex',
     justifyContent: 'space-between',
@@ -59,7 +59,7 @@ const Banner = () => {
   const { classes } = useStyles();
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:050 1234567';
+    window.location.href = 'tel:+971 56894 730';
   };
 
   const handleMailClick = () => {
@@ -83,7 +83,7 @@ const Banner = () => {
 
         <Text size="lg" onClick={handlePhoneClick} className={classes.phone}>
           <IconPhoneFilled style={iconStyle} />
-          <span className={classes.ctaText}>+971 56894 730 </span>
+          <span className={classes.ctaText}>+971 56894 730</span>
         </Text>
       </div>
     </div>

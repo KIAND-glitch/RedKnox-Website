@@ -9,7 +9,8 @@ import {
     Container,
     useMantineTheme,
     createStyles,
-    List
+    List,
+    Image
 } from '@mantine/core';
 import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';
 
@@ -26,19 +27,37 @@ const mockdata = [
             <List.Item>Project equipment & supplies</List.Item>
         </List>
       ),
-      icon: IconGauge,
+      icon: '/images/procurement.svg',
     },
     {
-      title: 'Supply chain management solutions',
+      title: 'Supply Chain Management Solutions',
       description:
         '',
-      icon: IconUser,
+      icon: '/images/supply-chain-management.svg',
     },
     {
       title: 'Specialised Project Logistics',
       description:
         '',
-      icon: IconCookie,
+      icon: '/images/logistics.svg',
+    },
+    {
+      title: 'Import - Export',
+      description:
+        '',
+      icon: '/images/export.svg',
+    },
+    {
+      title: 'Value Added Services',
+      description:
+        '',
+      icon: '/images/delivery-service.svg',
+    },
+    {
+      title: 'Air Express / Air Freight',
+      description:
+        '',
+      icon: '/images/freight.svg',
     },
   ];
 
@@ -67,6 +86,12 @@ const mockdata = [
 
     card: {
         border: `1px solid none`,
+        height: '280px',
+        [theme.fn.largerThan('sm')]: {
+          [theme.fn.smallerThan('lg')]: {
+            height: '320px',
+          }
+        },
     },
     cardTitle: {
         '&::after': {
@@ -87,11 +112,12 @@ const FeaturesCards = () => {
 
     const features = mockdata.map((feature) => (
         <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
-            <feature.icon
+            {/* <feature.icon
                 style={{ width: 50, height: 50 }}
                 stroke={2}
                 color='#cc2229'
-            />
+            /> */}
+            <Image src={feature.icon} style={{ width: 60, height: 60 }}/>
             <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
                 {feature.title}
             </Text>
