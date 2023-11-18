@@ -18,9 +18,16 @@ const mockdata = [
     {
       title: 'Sourcing and Procurement',
       description:
-        ' ',
+        `Sourcing and procurement are an essential
+        component of effective supply chain
+        management. We provide collaborative
+        solutions for our customers that place a total
+        supply chain perspective in their procurement
+        processes.
+        
+        Some of the sectors that we cater to:`,
       additionalContent: (
-        <List listStyleType="disc">
+        <List listStyleType="disc" size="md" color="#f1f1f1" mt="sm">
             <List.Item>Automotive</List.Item>
             <List.Item>Lighting fixtures</List.Item>
             <List.Item>Industrial solutions</List.Item>
@@ -32,13 +39,18 @@ const mockdata = [
     {
       title: 'Supply Chain Management Solutions',
       description:
-        '',
+        `We support in transforming your supply-chain
+        and logistics through efficiency and visibility to
+        enhance performance and reduce operating
+        costs.`,
       icon: '/images/supply-chain-management.svg',
     },
     {
       title: 'Specialised Project Logistics',
       description:
-        '',
+        `We work with your business to develop a
+        dependable freight plan which suits your
+        unique circumstances and needs.`,
       icon: '/images/logistics.svg',
     },
     {
@@ -50,13 +62,23 @@ const mockdata = [
     {
       title: 'Value Added Services',
       description:
-        '',
+        `Our value-added services (VAS) offering
+        are aimed to relieve your company of
+        some of its non- core activities, from
+        labelling to expediting. We ensure
+        flexibility and quality, striving to add value
+        to your supply chain.`,
       icon: '/images/delivery-service.svg',
     },
     {
       title: 'Air Express / Air Freight',
       description:
-        '',
+        `We provide Import/Export services to/from over
+        220 countries with customs clearance and
+        delivery within 2-4 days. We work with a
+        network of trusted partners to ensure a reliable
+        and cost-effective solution to your air
+        transportation needs.`,
       icon: '/images/freight.svg',
     },
   ];
@@ -86,10 +108,10 @@ const mockdata = [
 
     card: {
         border: `1px solid none`,
-        height: '280px',
+        // height: '280px',
         [theme.fn.largerThan('sm')]: {
           [theme.fn.smallerThan('lg')]: {
-            height: '320px',
+            // height: '320px',
           }
         },
     },
@@ -121,10 +143,10 @@ const FeaturesCards = () => {
             <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
                 {feature.title}
             </Text>
-            <Text size="sm" color="dimmed" mt="sm">
+            <Text size="md" mt="sm">
                 {feature.description}
+                {feature.additionalContent}
             </Text>
-            {feature.additionalContent}
         </Card>
     ));
 
