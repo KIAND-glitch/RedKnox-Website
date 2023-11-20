@@ -17,14 +17,14 @@ import Script from 'next/script'
 const HomePage = () => {
   return (
     <>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G_H03DX99598" />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-H03DX99598" />
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
  
-          gtag('config', 'G_H03DX99598');
+          gtag('config', 'G-H03DX99598');
         `}
       </Script>
       <Banner />
