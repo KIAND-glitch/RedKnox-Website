@@ -42,32 +42,76 @@ const mockdata = [
         `We support in transforming your supply-chain
         and logistics through efficiency and visibility to
         enhance performance and reduce operating
-        costs.`,
+        costs.
+        
+        Our dedicated account management teams
+        collaborate with customers to devise new
+        operation models and solutions; from design to
+        implementation and evaluation. The benefits
+        are optimised inventory, shorter lead time to
+        market and increased cost-efficiency.
+        
+        Through quality driven management
+        techniques, we are committed to helping you
+        achieve your strategic requirements at the
+        global, regional and local level.`,
       icon: '/images/supply-chain-management.svg',
     },
     {
       title: 'Specialised Project Logistics',
       description:
-        `We work with your business to develop a
-        dependable freight plan which suits your
-        unique circumstances and needs.`,
+        `When you have to move over-sized,
+        exceptional, bulky or heavy items leave it to the
+        experts.
+        
+        Redknox Global have the expertise needed to
+        plan, engineer and execute the best-suited
+        end-to-end transportation solutions.
+        
+        We recognise that commencing a relationship
+        with a new Logistics Service Provider may be
+        considered as a risk. By using proven Project
+        Management tools and methodology, coupled
+        with our experienced and professional team we
+        engage with all key stakeholders within a
+        project to ensure seamless implementation
+        with minimal impact on your business.`,
       icon: '/images/logistics.svg',
     },
     {
       title: 'Import - Export',
       description:
-        '',
+        `Importing and exporting goods across the globe
+        can be a challenging process. It includes
+        identifying the right suppliers, understanding the
+        regulatory requirements for Import and then
+        arranging for the transportation; all of which are key
+        components that are vital for the success of a
+        business.
+        
+        Redknox Global support our customers in the
+        Import & Export of their goods, taking away the
+        hassle and ensuring their goods arrive their
+        destination within the required lead times and at the
+        right cost.`,
       icon: '/images/export.svg',
     },
     {
       title: 'Value Added Services',
       description:
-        `Our value-added services (VAS) offering
-        are aimed to relieve your company of
-        some of its non- core activities, from
-        labelling to expediting. We ensure
-        flexibility and quality, striving to add value
-        to your supply chain.`,
+        `Our value-added services (VAS) offering are
+        aimed to relieve your company of some of its
+        non- core activities. These include:
+        
+        Monitor, coordinate and operationally handle
+        your inbound and outbound shipment flows
+        across all modes of transport.
+        
+        Shipment re-packing, package labelling to
+        expediting.
+        
+        We ensure flexibility and quality, striving to add
+        value to your supply chain.`,
       icon: '/images/delivery-service.svg',
     },
     {
@@ -75,10 +119,17 @@ const mockdata = [
       description:
         `We provide Import/Export services to/from over
         220 countries with customs clearance and
-        delivery within 2-4 days. We work with a
-        network of trusted partners to ensure a reliable
-        and cost-effective solution to your air
-        transportation needs.`,
+        delivery within 2-4 days.
+        
+        We work with a network of trusted partners to
+        ensure a reliable and cost-effective solution to
+        your air transportation needs.
+        
+        We provide competitive pricing to key trade
+        lanes across GCC, Asia, Europe, US & Africa.
+        
+        We arrange the entire end-to-end process right
+        from arranging pick-up to final delivery.`,
       icon: '/images/freight.svg',
     },
   ];

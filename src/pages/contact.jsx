@@ -8,8 +8,6 @@ const ContactPage = () => {
   return (
     <div>
     <HeaderMenu links={[{ label: 'Our Services', link: '/services' }, { label: 'About Us', link: '/about' }, { label: 'Contact Us', link: '/contact' }, ]} />
-      <h1>Contact Us</h1>
-      {/* Include the ContactUs component */}
       <ContactUs />
     </div>
   );
