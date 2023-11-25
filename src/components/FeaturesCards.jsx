@@ -17,15 +17,13 @@ import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';
 const mockdata = [
     {
       title: 'Sourcing and Procurement',
-      description:
-        `Sourcing and procurement are an essential
-        component of effective supply chain
-        management. We provide collaborative
-        solutions for our customers that place a total
-        supply chain perspective in their procurement
-        processes.
-        
-        Some of the sectors that we cater to:`,
+      description: (
+        <>
+            <p>Sourcing and procurement are an essential component of effective supply chain management.</p>
+            <p>We provide collaborative solutions for our customers that place a total supply chain perspective in their procurement processes.</p>
+            <p>Some of the sectors that we cater to:</p>
+        </>
+    ),
       additionalContent: (
         <List listStyleType="disc" size="md" color="#f1f1f1" mt="sm">
             <List.Item>Automotive</List.Item>
@@ -38,98 +36,61 @@ const mockdata = [
     },
     {
       title: 'Supply Chain Management Solutions',
-      description:
-        `We support in transforming your supply-chain
-        and logistics through efficiency and visibility to
-        enhance performance and reduce operating
-        costs.
-        
-        Our dedicated account management teams
-        collaborate with customers to devise new
-        operation models and solutions; from design to
-        implementation and evaluation. The benefits
-        are optimised inventory, shorter lead time to
-        market and increased cost-efficiency.
-        
-        Through quality driven management
-        techniques, we are committed to helping you
-        achieve your strategic requirements at the
-        global, regional and local level.`,
+      description: (
+        <>
+            <p>We support in transforming your supply-chain and logistics through efficiency and visibility to enhance performance and reduce operating costs.</p>
+            <p>Our dedicated account management teams collaborate with customers to devise new operation models and solutions; from design to implementation and evaluation. The benefits are optimised inventory, shorter lead time to market and increased cost-efficiency.</p>
+            <p>Through quality driven management techniques, we are committed to helping you achieve your strategic requirements at the global, regional and local level.</p>
+        </>
+    ),    
       icon: '/images/supply-chain-management.svg',
     },
     {
       title: 'Specialised Project Logistics',
-      description:
-        `When you have to move over-sized,
-        exceptional, bulky or heavy items leave it to the
-        experts.
-        
-        Redknox Global have the expertise needed to
-        plan, engineer and execute the best-suited
-        end-to-end transportation solutions.
-        
-        We recognise that commencing a relationship
-        with a new Logistics Service Provider may be
-        considered as a risk. By using proven Project
-        Management tools and methodology, coupled
-        with our experienced and professional team we
-        engage with all key stakeholders within a
-        project to ensure seamless implementation
-        with minimal impact on your business.`,
+      description: (
+        <>
+            <p>When you have to move over-sized, exceptional, bulky or heavy items leave it to the experts.</p>
+            <p>Redknox Global have the expertise needed to plan, engineer and execute the best-suited end-to-end transportation solutions.</p>
+            <p>We recognise that commencing a relationship with a new Logistics Service Provider may be considered as a risk. By using proven Project Management tools and methodology, coupled with our experienced and professional team we engage with all key stakeholders within a project to ensure seamless implementation with minimal impact on your business.</p>
+        </>
+    ),    
       icon: '/images/logistics.svg',
     },
     {
       title: 'Import - Export',
-      description:
-        `Importing and exporting goods across the globe
-        can be a challenging process. It includes
-        identifying the right suppliers, understanding the
-        regulatory requirements for Import and then
-        arranging for the transportation; all of which are key
-        components that are vital for the success of a
-        business.
-        
-        Redknox Global support our customers in the
-        Import & Export of their goods, taking away the
-        hassle and ensuring their goods arrive their
-        destination within the required lead times and at the
-        right cost.`,
+      description: (
+        <>
+            <p>Importing and exporting goods across the globe can be a challenging process. It includes identifying the right suppliers, understanding the regulatory requirements for Import and then arranging for the transportation; all of which are key components that are vital for the success of a business.</p>
+            <p>Redknox Global support our customers in the Import & Export of their goods, taking away the hassle and ensuring their goods arrive their destination within the required lead times and at the right cost.</p>
+        </>
+    ),    
       icon: '/images/export.svg',
     },
     {
       title: 'Value Added Services',
-      description:
-        `Our value-added services (VAS) offering are
-        aimed to relieve your company of some of its
-        non- core activities. These include:
-        
-        Monitor, coordinate and operationally handle
-        your inbound and outbound shipment flows
-        across all modes of transport.
-        
-        Shipment re-packing, package labelling to
-        expediting.
-        
-        We ensure flexibility and quality, striving to add
-        value to your supply chain.`,
+      description: (
+        <>
+            <p>Our value-added services (VAS) offering are aimed to relieve your company of some of its non-core activities. These include:</p>
+            <ul>
+                <li>Control Tower to monitor, coordinate and operationally handle your inbound and outbound shipment flows across all modes of transport.</li>
+                <li>Shipment re-packing, package labelling to expediting.</li>
+            </ul>
+            <p>We ensure flexibility and quality, striving to add value to your supply chain.</p>
+        </>
+    ),
+    
       icon: '/images/delivery-service.svg',
     },
     {
       title: 'Air Express / Air Freight',
-      description:
-        `We provide Import/Export services to/from over
-        220 countries with customs clearance and
-        delivery within 2-4 days.
-        
-        We work with a network of trusted partners to
-        ensure a reliable and cost-effective solution to
-        your air transportation needs.
-        
-        We provide competitive pricing to key trade
-        lanes across GCC, Asia, Europe, US & Africa.
-        
-        We arrange the entire end-to-end process right
-        from arranging pick-up to final delivery.`,
+      description: (
+        <>
+            <p>We provide Import/Export services to/from over 220 countries with customs clearance and delivery within 2-4 days.</p>
+            <p>We work with a network of trusted partners to ensure a reliable and cost-effective solution to your air transportation needs.</p>
+            <p>We provide competitive pricing to key trade lanes across GCC, Asia, Europe, US & Africa.</p>
+            <p>We arrange the entire end-to-end process right from arranging pick-up to final delivery.</p>
+        </>
+    ),    
       icon: '/images/freight.svg',
     },
   ];
